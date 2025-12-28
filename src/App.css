@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    min-height: 100vh;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.6s ease;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+.app.day {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+.app.night {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.card h1 {
+    margin-bottom: 1.5rem;
+}
+
+.dark .card {
+    background: #1e1e1e;
+    color: #f1f1f1;
+}
+
+.dark input {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* Egységes alap gomb stílus minden gombnak */
+button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #4a6cf7;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+button:hover {
+    background-color: #3959d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.theme-toggle {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* A search-bar gombja már az alap button stílust használja */
+
+.weather-card {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: #f4f6ff;
+}
+
+.weather-card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.weather-card img {
+    width: 100px;
+    height: 100px;
+}
+
+.loader {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.error {
+    margin-top: 1rem;
+    color: #d8000c;
+}
+
+.temp-cold {
+    color: #0077ff;
+    font-weight: bold;
+}
+
+.temp-normal {
+    color: #333;
+}
+
+.temp-hot {
+    color: #d8000c;
+    font-weight: bold;
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.icon-day {
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-night {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+
+    .weather-card img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.history {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.history-item {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    background: #e0e3ff;
+    color: #4a6cf7;
+}
+
+.history-item:hover {
+    background: #c7ccff;
+}
+
+.clear-history {
+    margin-top: 1rem;
+    background: #ff4d4d;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.clear-history:hover {
+    background: #e60000;
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.2);
+}
+
+.dark button {
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+.dark button:hover {
+    background-color: #505050;
+}
+
+.dark .history-item {
+    background: #333;
+    color: #4a6cf7;
+}
+
+.dark .clear-history {
+    background: #bc3e3e;
+}
